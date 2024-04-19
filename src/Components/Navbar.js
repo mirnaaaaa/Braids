@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../img/bbm.jpg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsCartCheck } from "react-icons/bs";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(true);
 
+  const activeLink = 'underline  '
+  const normalLink = ''
+
   return (
-    <div className="w-full h-20   flex items-center px-4 bg-white text-white  ">
+    <div className="w-full h-20   flex items-center px-4  text-white  ">
       <div className="flex items-center  justify-between w-full">
         <div>
           <ul className="hidden sm:flex  text-gray-500 ">
             <div className="px-20 ">
               <img className=" w-20 px-1" src={logo} alt="My Profile" />
             </div>
-            <Link to="/">
-              <li>Home</li>
-            </Link>
+            <NavLink to='/' className={({isActive }) =>  isActive ? activeLink : normalLink}>
+            <li>Home</li>
+
+            </NavLink>
+          
+          
             <Link to="/Shop">
               <li>Shop</li>
             </Link>

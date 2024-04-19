@@ -44,12 +44,12 @@ export default function Schedule() {
                   </h1>
                   {e.image.map((x, i) => {
                     return (
-                      <div key={i} className="border-4  p-2 mt-3 grid ">
+                      <div key={i} className="border-4  p-6 mt-3 grid ">
                         <div className="sm:flex ">
                           <img
                             src={x.i}
                             alt="look"
-                            className="rounded-md h-36 max-w-xs "
+                            className="rounded-md h-60  "
                           />
                           <div className="sm:flex  sm:justify-between w-full mt-1">
                             <div className="flex flex-col  sm:ml-4  ">
@@ -58,10 +58,10 @@ export default function Schedule() {
                               <h1 className="pt-4 text-sm">- lasts {x.stay}</h1>
                               <p className="text-sm">- waist length</p>
                             </div>
-                            <div className="flex mt-1 ml-4">
+                            <div className="flex mt-1 ">
                               <button
                                 onClick={() => appointment(x.name)}
-                                className="h-10 border px-4 rounded-md bg-fuchsia-300   "
+                                className="h-8 border rounded-md bg-[#92A49A] text-xs px-8 text-white"
                               >
                                 Book
                               </button>

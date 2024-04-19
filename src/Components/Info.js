@@ -1,33 +1,20 @@
 import { React, useContext } from "react";
-import { Link } from "react-router-dom";
 import { Show } from "../Context/Show";
 import { Selected } from "../Context/Selected";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import {loadStripe} from '@stripe/stripe-js';
-
 
 export default function Info() {
-  const { choose } = useContext(Show);
+  const { choose , setInformation} = useContext(Show);
   const { date } = useContext(Selected);
 
-  const makePayment = async() => {
-    const stripe = await loadStripe('pk_test_51OiySTECBKruDsQ5P81ak9x0Rarm3BwRVUNlxOIb2etkNGJUnj5ZaeOUMsaI46aACmyniYfrHezfroo6gELB8SjY00pAN182uw');
-    
-
-  }
-
   return (
-    <div className=" h-screen w-full text-fuchsia-950 bg-gradient-to-b from-white to-fuchsia-950 pt-10 ">
-      <div className=" h-full max-w-[52rem] p-4 mx-auto  flex flex-col  bg-white ">
-        <div className="rounded-r-lg bg-fuchsia-300 p-4 w-40 flex justify-center">
-          <h1>Your Info</h1>
-        </div>
-        <Link to="/Appointments">
-          <div className="flex my-6">
+      <div >
+          <button className="flex my-6 hover:pointer" 
+          onClick={() => setInformation(false)}
+          >
             <MdOutlineKeyboardArrowLeft size={17} />
             <h1 className="text-xs font-bold">EDIT APPOINTMENT INFORMATION</h1>
-          </div>
-        </Link>
+          </button>
         {choose.map((x) => {
           return (
             <div className=" p-2  ">
@@ -44,7 +31,7 @@ export default function Info() {
           );
         })}
         <form className="flex flex-col w-full py-10 px-2 text-sm ">
-          <span className="pb-1">Name</span>
+          <span className="pb-1 font-bold">Name</span>
           <div className="flex gap-1 ">
             <input
               placeholder="First Name"
@@ -57,18 +44,16 @@ export default function Info() {
               className="w-full text-black"
             />
           </div>
-          <span className="pt-4">Phone</span>
-          <span className="py-1">
+          <span className="pt-4 font-bold">Phone</span>
+          <span className="py-1 text-xs">
             Add your phone number to receive an appointment reminder via text
             message.
           </span>
           <input className="text-black" type="number" />
         </form>
         <button
-        onClick={() => makePayment()}
+        className="bg-[#92A49A] text-sm p-3 text-white w-40 ml-3 rounded"
         >Pay Now</button>
-
       </div>
-    </div>
   );
 }

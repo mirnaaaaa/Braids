@@ -6,7 +6,7 @@ import birthday2 from "../img/bir.jpg";
 
 export default function Events (){
   return (
-    <div className=" h-full w-full text-fuchsia-950 bg-gradient-to-b from-white to-fuchsia-950 pt-10 ">
+    <div className=" h-full w-full bg-[#99AC96] pt-10 ">
       <div className="h-full max-w-[52rem] p-4 mx-auto justify-center flex flex-col  bg-white ">
         <h1>PARTY & EVENTS</h1>
         <h1 className="font-bold py-2">to make an Appointment:</h1>

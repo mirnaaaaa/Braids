@@ -2,7 +2,7 @@ import React from "react";
 
 export const Contact = () => {
   return (
-    <div className="h-screen w-full text-fuchsia-950 bg-gradient-to-b from-white to-fuchsia-950 pt-10 ">
+    <div className="h-screen w-full bg-[#99AC96] pt-10 ">
       <div className="max-w-[52rem] p-4 mx-auto justify-center flex flex-col h-full  bg-white">
         <div className="flex justify-center items-center w-full ">
           <form

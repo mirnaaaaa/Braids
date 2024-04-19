@@ -21,12 +21,12 @@ export default function CategorY() {
           return (
             <div
               key={e.id}
-              className="border-4  p-2 mt-1 items-center justify-between flex"
+              className="border  p-2 mt-1 items-center justify-between flex"
             >
               <h1>{e.title}</h1>
               <button
-                onClick={() => handleBook(e)}
-                className="border p-2 rounded-md bg-fuchsia-300                        "
+           onClick={() => handleBook(e)}     
+                className="border p-2 rounded-md bg-[#92A49A]   text-white  px-4   text-xs              "
               >
                 Select
               </button>
